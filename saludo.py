@@ -1,3 +1,7 @@
+"""
+El programa que saluda.
+"""
+
 salir = False
 while not salir:
     nombre = input('Introduce tu nombre: ')
