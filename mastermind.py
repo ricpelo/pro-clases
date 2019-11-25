@@ -1,11 +1,60 @@
-inventar un número de 4 dígitos
-si el jugador aún no ha agotado sus 10 intentos:
-    pedirle el siguiente intento al jugador
-    comprobar cuántos dígitos tiene correctamente puestos
-    si son todos:
-        ¡Ganó!
-        fin
-    si no:
-        decirle al jugador cuántos dígitos tiene correctamente puestos
-        comprobar cuántos dígitos están pero no en su sitio
-        decírselo al jugador
+import random
+
+def rellenar_izquierda(numero, digitos, relleno):
+    pass
+
+def generar_objetivo(digitos):
+    """
+    Genera aleatoriamente un objetivo, consistente en
+    un número entero con el número de dígitos indicado en el
+    parámetro.
+    """
+    return f"{random.randint(0, 10 ** digitos - 1):0{digitos}}"
+
+def pedir_intento(digitos):
+    """
+    Pide un intento al usuario.
+
+    El intento debe ser un número entero de no más de 'digitos' dígitos.
+    """
+    while True:
+        try:
+            intento = int(input('Introduzca su nuevo intento: '))
+            intento = str(f"{intento:0{digitos}}")
+            if len(intento) > digitos:
+                print('El intento no debe tener más de', digitos, 'dígitos.')
+            else:
+                break
+        except ValueError:
+            print('El intento debe ser un número entero')
+    return intento
+
+def digitos_correctos(objetivo, intento):
+    correctos = 0
+    for i in range(len(objetivo)):
+        if objetivo[i] == intento[i]:
+            correctos += 1
+    return correctos
+
+def digitos_descolocados(objetivo, intento):
+    descolocados = 0
+    for i in range(len(intento)):
+        j = objetivo.index(intento[i])
+        # TODO: Seguir por aquí
+
+objetivo = generar_objetivo(4)
+gano = False
+for intentos in range(10):
+    intento = pedir_intento(4)
+    correctos = digitos_correctos(objetivo, intento)
+    if correctos == 4:
+        gano = True
+        break
+    else:
+        print('Tiene', correctos, 'dígitos correctamente colocados.')
+        descolocados = digitos_descolocados(objetivo, intento)
+        print('Tiene', descolocados, 'dígitos que están pero no en su sitio.')
+if gano:
+    print('¡Ganó!')
+else:
+    print('¡Perdió!')
