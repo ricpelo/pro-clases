@@ -37,10 +37,17 @@ def digitos_correctos(objetivo, intento):
     return correctos
 
 def digitos_descolocados(objetivo, intento):
+    def digito_correcto(posicion):
+        return objetivo[posicion] == intento[posicion]
     descolocados = 0
     for i in range(len(intento)):
-        j = objetivo.index(intento[i])
-        # TODO: Seguir por aquí
+        if digito_correcto(i):
+            continue
+        for j in range(len(objetivo)):
+            if i != j and intento[i] == objetivo[j]:
+                descolocados += 1
+                break
+    return descolocados
 
 objetivo = generar_objetivo(4)
 gano = False
@@ -57,4 +64,4 @@ for intentos in range(10):
 if gano:
     print('¡Ganó!')
 else:
-    print('¡Perdió!')
+    print('¡Perdió! El objetivo era', objetivo, '.')
