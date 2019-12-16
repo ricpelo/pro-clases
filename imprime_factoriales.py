@@ -6,5 +6,7 @@ def fact(n):
         i += 1
     return res
 
-for i in range(6):
-    print(str(fact(i)).center(8, '*'))
+for j in range(6):
+    print(str(fact(j)).center(8, '*'))
+
+fac_rec = lambda n: 1 if n == 0 else n * fac_rec(n - 1)
