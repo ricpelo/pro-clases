@@ -1,16 +1,18 @@
 class Deposito:
     def __init__(self, fondos):
-        self.fondos = fondos
+        self.__fondos = fondos
 
     def retirar(self, cantidad):
-        if cantidad > self.fondos:
+        if cantidad > self.__fondos:
             return 'Fondos insuficientes'
-        self.fondos -= cantidad
-        return self.fondos
+        self.__fondos -= cantidad
+        return self.__fondos
 
     def ingresar(self, cantidad):
-        self.fondos += cantidad
-        return self.fondos
+        self.__fondos += cantidad
+        return self.__fondos
 
     def saldo(self):
-        return self.fondos
+        return self.__fondos
+
+dep = Deposito(100)
