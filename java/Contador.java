@@ -1,20 +1,30 @@
 public class Contador {
     private int valor;
 
-    public int getValor() {
-        return this.valor;
+    Contador() {
+        
     }
 
-    public void setValor(int valor) {
-        this.valor = valor;
+    Contador(int val) {
+        valor = val;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    public int siguiente() {
+        return ++valor;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this.getClass() != obj.getClass()) {
+        if (!(obj instanceof Contador)) {
             return false;
         }
 
-        return this.getValor() == ((Contador) obj).getValor();
+        super.equals(obj)
+
+        return getValor() == ((Contador) obj).getValor();
     }
 }
