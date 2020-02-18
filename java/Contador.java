@@ -1,10 +1,6 @@
 public class Contador {
     private int valor;
 
-    Contador() {
-        
-    }
-
     Contador(int val) {
         valor = val;
     }
@@ -22,8 +18,6 @@ public class Contador {
         if (!(obj instanceof Contador)) {
             return false;
         }
-
-        super.equals(obj)
 
         return getValor() == ((Contador) obj).getValor();
     }
