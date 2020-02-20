@@ -1,13 +1,17 @@
 /**
  * Rectangulo
  */
-public class Rectangulo extends Figura {
+public final class Rectangulo extends Figura {
     Rectangulo(double an, double al) {
         super(an, al);
     }
 
     @Override
     public double area() {
-        return ancho * alto;
+        final double resultado;
+
+        resultado = ancho * alto;
+
+        return resultado;
     }
 }
