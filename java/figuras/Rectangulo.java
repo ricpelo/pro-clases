@@ -1,7 +1,7 @@
 /**
  * Rectangulo
  */
-public final class Rectangulo extends Figura {
+public class Rectangulo extends Figura {
     Rectangulo(double an, double al) {
         super(an, al);
     }
