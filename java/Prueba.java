@@ -1,18 +1,17 @@
 public class Prueba {
     public static void main(String[] args) {
         Persona yo = new Persona("Ricardo", 956956956);
-        Persona p = new Persona("María");
-        Persona q = new Persona();
-        Cliente juan = new Cliente("Juan", 666555444, 105);
+        String cadena = yo.toString();
 
-        yo.set("Manolo", 111111);
-        juan.set(555555);
-        juan.set(25L);
+        System.out.println(cadena);
+    }
 
-        System.out.println(yo.getNombre());
-        System.out.println(yo.getTelefono());
+    public static void imprimeNombre(Persona p) {
+        System.out.println(p.getNombre());
+    }
 
-        System.out.println(juan.getNombre());
-        System.out.println(juan.getTelefono());
+    public static void imprimeNombre(Cliente c) {
+        System.out.println(c.getNombre());
+        System.out.println(c.getNombre());
     }
 }

@@ -18,8 +18,17 @@ public class Persona {
         setTelefono(telf);
     }
 
+    @Override
+    public String toString() {
+        return getNombre() + " " + getTelefono();
+    }
+
     public String getNombre() {
         return nombre;
+    }
+
+    public String getNose() {
+        return "hola";
     }
 
     public void setNombre(String nom) {
