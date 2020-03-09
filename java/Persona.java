@@ -18,6 +18,11 @@ public class Persona {
         setTelefono(telf);
     }
 
+    Persona(Persona otra) {
+        setNombre(otra.getNombre());
+        setTelefono(otra.getTelefono());
+    }
+
     @Override
     public String toString() {
         return getNombre() + " " + getTelefono();
