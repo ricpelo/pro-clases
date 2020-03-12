@@ -29,6 +29,8 @@ public class CalculaSimple {
             } catch (NoSuchElementException e) {
                 System.err.println("Faltan datos.");
                 return;
+            } finally {
+                scanner.close();
             }
         }
     }
